@@ -1,0 +1,39 @@
+### Để thu nhập dữ liệu truy cập thu mục crawler
+1. Trỏ tới thư mục "crawler": `cd crawler`
+2. Chạy thu nhập: `python main_crawl_fake_real.py`
+-> Kết quả: lưu dữ liệu đã crawl vào đường dẫn và hiển thị các bài báo đã crawl được
+* Lưu ý: thiết lập các biến cần thiết trước khi chạy, mỗi loại báo sẽ có lớp (class) khác nhau để crawl
+* Note: "data_controller.py"là file chứa các phương thức thu nhập
+
+### Để chuẩn bị dữ liệu cho huấn luyện truy cập thư mục prepare_data
+1. Trỏ tới thư mục "prepare_data": `cd prepare_data`
+2. Chạy tiền xử lí dữ liệu và chia tập dữ liệu: `python preprocess_vn.py`
+-> Kết quả: lưu các tập train, validate, test (đã tiền xử lí) theo đường dẫn
+* Note: file "data_clean.py" là file chứa các phương thức làm sạch dữ liệu
+
+### Để huấn luyện mô hình truy cập thư mục "models"
+- Trường hợp huấn luyện mô hình GRU:
+    + Chạy `python Gru.py`
+    -> Kết quả: lưu quá trình huấn luyện vào file "../save_model/result_train_gru.csv", hiển thị loss và accuracy ở tập test 
+    và lưu mô hình ở "../save_model/Gru.h5"
+- Trường hợp huấn luyện mô hình Bi-LSTM:
+    + Chạy `python Bi-LSTM`
+    -> Kết quả: tương tự trường hợp trên
+- Trường hợp huấn luyện mô hình đề xuất:
+    + Chạy `python main_model_train`
+    -> Kết quả: tương tự trường hợp trên
+* Note: "tran_lstm.py" là file chứa cấu trúc mô hình đề xuất
+
+### Để đánh giá hiệu quả của mô hình truy cập thư mục "models"
+1. Trỏ tới thư mục "models": `cd models`
+2. Chạy đánh giá: `python evaluate.py`
+-> Kết quả: hiển thị biểu đồ loss, accuracy trong quá trình train, xuất ra kết quả đo fake|real news accuracy và xuất
+ra ma trận nhầm lẫn
+
+### Để chạy web dự đoán truy cập file "main_web.py"
+- Chạy web: `streamlit run main_web.py`
+* Lưu ý: để chỉnh giao diện như báo cáo
+    1. Nhấn vào biểu tượng ở góc phải trên cùng
+    2. Click setting
+    3. Ở mục "Appearance" chọn "wide mode"
+    4. Chọn "Edit active theme" để chỉnh font thành "mono space"

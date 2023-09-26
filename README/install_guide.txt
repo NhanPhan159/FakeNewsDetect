@@ -1,0 +1,6 @@
+### thiết lập môi trường ảo
+1. Khởi tạo môi trường: `py -3 -m venv .venv` (cho windows), `python3 -m venv .venv` (cho mac)
+2. Kích hoạt môi trường: `.venv\scripts\activate` (cho windows), `source .venv/bin/activate` (cho mac)
+
+### cài đặt thư viện
+`pip install -r requirement.txt`

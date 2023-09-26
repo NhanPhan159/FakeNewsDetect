@@ -1,0 +1,7 @@
+underthesea
+tensorflow==2.9.2
+streamlit==1.22.0
+beautifulsoup4
+wordcloud
+pandas
+numpy
